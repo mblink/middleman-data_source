@@ -138,7 +138,7 @@ module Middleman
 
         def get_file_contents file_path
           if options.rack_app
-            rack_app.get( URI.escape(file_path) ).body
+            rack_app.get( URI::DEFAULT_PARSER.escape(file_path) ).body
           else
             file_path = File.join( options.root, file_path ) if options.root
             Borrower::Content.get file_path

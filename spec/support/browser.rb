@@ -9,11 +9,11 @@ module Middleman
     end
 
     def get path
-      browser.get( URI.escape(path) ).body
+      browser.get( URI::DEFAULT_PARSER.escape(path) ).body
     end
 
     def get_response path
-      browser.get( URI.escape(path) )
+      browser.get( URI::DEFAULT_PARSER.escape(path) )
     end
 
   end
